@@ -1,0 +1,205 @@
+body {
+    background:linear-gradient(to right, #1C0D23, #131038, #0C154A);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Quicksand";
+}
+
+#solar-system {
+    display: flex;
+     align-items: center;
+     
+   
+}
+h1{
+    color: white;
+
+}
+
+#Solis {
+    width: 300px;
+    height: 750px;
+    background-color: #FFD029;
+    border-radius: 50%;
+    margin-left: -35vw;
+    margin-right: 100px;
+    cursor: pointer;
+}
+
+.planet-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.planet {
+    border-radius: 50%;
+    margin-right: 100px;
+    cursor: pointer;
+    
+}
+
+#Mercurialis {
+    background-color: #bbaea1;
+    width: 15px;
+    height: 15px;
+}
+
+#Venus {
+    background-color: #E7CCCB;
+    width: 30px;
+    height: 30px;
+}
+
+#Tellus {
+    background-color: #4d74e5;
+    width: 35px;
+    height: 35px;
+}
+
+#Mars {
+    background-color: #EF5F5F;
+    width: 15px;
+    height: 15px;
+}
+
+#Lovis {
+    background-color: #de913f;
+    width: 180px;
+    height: 180px;
+}
+
+#Saturnus {
+    background-color: #e7d381;
+    width: 140px;
+    height: 140px;
+}
+
+
+#Uranus {
+    background-color: #88c4eb;
+    width: 70px;
+    height: 70px;
+}
+
+#Neptunus {
+    background-color: #3c58ff;
+    width: 71px;
+    height: 71px;
+    margin-right: 100px;
+}
+
+
+/* '''''''''''''''''''''''''''''*/
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.popup {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background: rgb(181, 178, 231);
+    width: 800px;
+    height: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.planet-inside-pop-up{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: -300px;
+    grid-row: 2;
+    align-self: center;
+}
+
+.Solis{
+    background-color: #FFD029;
+}
+.Mercurialis {
+    background-color: #bbaea1;
+}
+.Venus{
+    background-color: #E7CCCB;
+}
+.Tellus{
+    background-color: #4d74e5;
+}
+.Mars{
+    background-color: #EF5F5F;
+}
+.Lovis {
+    background-color: #de913f;
+}
+.Saturnus{
+    background-color: #e7d381;
+}
+.Uranus{
+    background-color: #88c4eb;
+}
+.Neptunus{
+    background-color: #3c58ff;
+}
+
+
+.popup h2 {
+    color: #242323;
+    border-bottom: 1px solid rgb(136, 135, 135);
+    grid-column: 1 / span 3;
+    height: fit-content;
+
+    
+}
+
+#planet-description {
+    color: #202020;
+    overflow: auto;
+    grid-column: 2 ;
+    grid-row: 2;
+}
+#planet-tempday{
+    grid-column: 3;
+    
+}
+#planet-tempnight{
+grid-column: 3;
+}
+
+
+
+
+#closeButton {
+    justify-self: center;
+    align-self:  end;
+    grid-column: 2;
+    width: 50%;
+    height: 20%;
+    background: #b668eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
