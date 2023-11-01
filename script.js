@@ -1,6 +1,9 @@
- let url = "https://majazocom.github.io/Data/solaris.json" 
-/* let url = "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/" */
- let planets = []
+
+//MIN API URL
+let url = "https://majazocom.github.io/Data/solaris.json" 
+
+
+//MIN DOM
 let planetDesc = document.getElementById("planet-description")
 let planetTempDay = document.getElementById("planet-tempday")
 let planetTempNight = document.getElementById("planet-tempnight")
@@ -13,7 +16,7 @@ let planetPopUp = document.querySelector(".planet-inside-pop-up")
 
 
 
-
+//HÄMTA API DATAN
 const fetchAPI = async () => {
     try {
         const response = await fetch(url);
@@ -21,12 +24,12 @@ const fetchAPI = async () => {
             throw new Error("Failed to fetch key")
         }
         const data = await response.json()
-         /* console.log(data)  */
+         console.log(data)
+         //SPARA DATAN I PLANETS. GÖR EN FOREACH SOM GÅR IGENOM HIMMELKROPPARNA 1 OCH 1 OCH SEDAN ANROPAR MIN POPUP FUNCTION FÖR ATT DE SKA BLI TILL VARJE HIMMELKROPP 
          planets = data
         planets.forEach(planet => {
             
-    
-            generatePopUp(planet);
+            planetsPopUp(planet);
            
         });
 
@@ -37,8 +40,8 @@ const fetchAPI = async () => {
 }
 
 fetchAPI();
-
-const generatePopUp = (planet) => {
+//PopUP
+const planetsPopUp = (planet) => {
     document.getElementById(planet.latinName).addEventListener("click", () => {
         planetDesc.innerText = planet.desc
         planetName.innerText = planet.name
@@ -60,47 +63,8 @@ const generatePopUp = (planet) => {
 } 
 
 
-//------------------------------------------
 
-/* const aboutPlanet = async () => {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error("Failed to fetch description")
-        }
-        const data = await response.json()
-        descrip = data
-        descrip.forEach(planet => {
-            console.log(planet.desc)
-            document.getElementById(planet.latinName).addEventListener("click", () => {
-                planetDesc.innerText = planet.desc
-                planetName.innerText = planet.name
-                const overlay = document.getElementById("overlay");
-                overlay.style.display = "flex";
-            });
-
-            document.getElementById("closeButton").addEventListener("click", () => {
-                const overlay = document.getElementById("overlay");
-                overlay.style.display = "none";
-            });
-        });
-
-    }
-    catch (error) {
-        console.error("Error fetching key", error);
-    }
-}
- */
-/* aboutPlanet() */
-
-
-
-
-
-
-
-
-
+// FUNKAR EJ VET EJ VARFÖR.
 
 /* let url = "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/"
 
